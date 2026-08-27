@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap" Comment="动作定义信息">
+  <ActionMap element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitAction" Comment="动作集合" />
+</data>
