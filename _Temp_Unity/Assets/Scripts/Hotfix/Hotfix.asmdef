@@ -15,7 +15,8 @@
         "ArtTool",
         "SH7.SDK",
         "Unity.TextMeshPro",
-        "Shanhai.Baihu.Runtime"
+        "Shanhai.Baihu.Runtime",
+        "colyseus.nativewebsocket"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
