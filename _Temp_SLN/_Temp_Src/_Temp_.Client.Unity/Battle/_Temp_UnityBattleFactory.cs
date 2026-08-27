@@ -11,9 +11,9 @@ namespace _Temp_.Client.Unity.Battle;
 /// 这部分写到DLL里面的好处是，VS编译会把DLL复制到UnityRun编辑器运行时里面，
 /// 这样不需要重新打UnityPC包就可以更新逻辑。
 /// </summary>
-public partial class _Temp_UnityBattleFactory : UnityBattleFactory
+public partial class _Temp_BaseUnityBattleFactory : UnityBattleFactory
 {
-    public _Temp_UnityBattleFactory(string root) : base(root)
+    public _Temp_BaseUnityBattleFactory(string root) : base(root)
     {
         
     }
