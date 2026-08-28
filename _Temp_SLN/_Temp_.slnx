@@ -69,6 +69,17 @@
 		<Project Path="DeepMeta/DeepTools.Voxel/DeepTools.Voxel.csproj" />
 		<Project Path="DeepMeta/DeepTools.XLS2Lang/DeepTools.XLS2Lang.csproj" />
 	</Folder>
+	<Folder Name="/0.DeepMeta/5.EditorMain/">
+		<Project Path="DeepEditorMain/DeepGameEditor3D.AI/DeepGameEditor3D.AI.csproj" />
+		<Project Path="DeepEditorMain/DeepGameEditor3D.Main/DeepGameEditor3D.Main.csproj" />
+		<Project Path="DeepEditorMain/DeepGameEditor3D.MMO/DeepGameEditor3D.MMO.csproj" />
+		<Project Path="DeepEditorMain/DeepGameEditor3D.MMOServer/DeepGameEditor3D.MMOServer.csproj" />
+		<Project Path="DeepEditorMain/DeepGameEditor3D.Packages/DeepGameEditor3D.Packages.csproj">
+			<Build Solution="Source|Any CPU" Project="false" />
+		</Project>
+		<Project Path="DeepEditorMain/DeepGameEditor3D.Plugin3D/DeepGameEditor3D.Plugin3D.csproj" />
+		<Project Path="DeepEditorMain/DeepGameEditor3D.Unity3D/DeepGameEditor3D.Unity3D.csproj" />
+	</Folder>
 	<Folder Name="/0.DeepMeta/6.MMO/">
 		<Project Path="DeepMeta/Gate.Client/Gate.Client.csproj" />
 		<Project Path="DeepMeta/Gate.Data/Gate.Data.csproj" />
