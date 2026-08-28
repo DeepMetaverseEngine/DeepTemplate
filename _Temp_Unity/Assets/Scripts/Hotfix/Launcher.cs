@@ -33,12 +33,11 @@ public class Launcher : MonoBehaviour
         {
             YooAssetManager.DefaultPlayMode = AssetMode == AssetMode.Bundle ? EPlayMode.OfflinePlayMode : EPlayMode.EditorSimulateMode;
         }
-//         if (GameEntry.Instance)
-//         {
-//             YooAssetManager.DefaultPlayMode = GameEntry.Instance.EPlayMode;
-//         }
+        //         if (GameEntry.Instance)
+        //         {
+        //             YooAssetManager.DefaultPlayMode = GameEntry.Instance.EPlayMode;
+        //         }
 #endif
-
         BattleBootstrap.OnFinish(Bootstrap_OnFinish);
     }
 
@@ -54,51 +53,49 @@ public class Launcher : MonoBehaviour
                 // 进入编辑器 预览
                 {
                     UnityBattleFactory.CommandLineArgs.Put("-Preview", "true");
-                    var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorMain.unity", LoadSceneMode.Additive);
-                    await sceneHandle;
+                    //                     var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorMain.unity", LoadSceneMode.Additive);
+                    //                     await sceneHandle;
+                    SceneManager.LoadScene("EditorMain", LoadSceneMode.Additive);
                 }
 
-                // SceneManager.LoadScene("EditorMain", LoadSceneMode.Additive);
                 break;
             case EGameMode.Editor_Resource:
                 // 进入编辑器 资源
                 {
                     UnityBattleFactory.CommandLineArgs.Put("-Resource", "true");
-                    var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorMain.unity", LoadSceneMode.Additive);
-                    await sceneHandle;
+                    //                     var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorMain.unity", LoadSceneMode.Additive);
+                    //                     await sceneHandle;
+                    SceneManager.LoadScene("EditorMain", LoadSceneMode.Additive);
                 }
-
-                // SceneManager.LoadScene("EditorMain", LoadSceneMode.Additive);
                 break;
             case EGameMode.Editor_Scene:
                 // 进入编辑器 场景
-
                 {
                     UnityBattleFactory.CommandLineArgs.Put("-SceneEditor", "true");
-                    var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorMain.unity", LoadSceneMode.Additive);
-                    await sceneHandle;
+                    //                     var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorMain.unity", LoadSceneMode.Additive);
+                    //                     await sceneHandle;
+                    SceneManager.LoadScene("EditorMain", LoadSceneMode.Additive);
                 }
-                // SceneManager.LoadScene("EditorMain", LoadSceneMode.Additive);
                 break;
             case EGameMode.BattleTest:
                 // 进入编辑器 战斗测试 BattleTest 场景
                 {
-                    var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorGame.unity", LoadSceneMode.Additive);
-                    await sceneHandle;
+                    //var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/EditorGame.unity", LoadSceneMode.Additive);
+                    //await sceneHandle;
+                    SceneManager.LoadScene("EditorGame", LoadSceneMode.Additive);
                 }
-                // SceneManager.LoadScene("EditorGame", LoadSceneMode.Additive);
                 break;
             case EGameMode.GameClient:
                 Screen.SetResolution(1280, 720, false);
                 {
-                    var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/GameLogin.unity", LoadSceneMode.Additive);
-                    await sceneHandle;
+                    //                     var sceneHandle = AssetManager.Instance.LoadSceneAsync("Assets/Scenes/GameLogin.unity", LoadSceneMode.Additive);
+                    //                     await sceneHandle;
+                    // 进入游戏
+                    // SceneManager.LoadScene("GameRoot", LoadSceneMode.Additive);
+                    // TODO 默认进入游戏
+                    // 正式登录游戏场景
+                    //SceneManager.LoadScene("Launcher_Game", LoadSceneMode.Single);
                 }
-                // 进入游戏
-                // SceneManager.LoadScene("GameRoot", LoadSceneMode.Additive);
-                // TODO 默认进入游戏
-                // 正式登录游戏场景
-                //SceneManager.LoadScene("Launcher_Game", LoadSceneMode.Single);
                 {
                     //这里初始化管理器
                     //HotfixMain当个管理器吧
