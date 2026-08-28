@@ -36,7 +36,9 @@
 	  <ProjectReference Include="..\..\DeepMeta\DeepCore.Template.NewtonJson\DeepCore.Template.NewtonJson.csproj" />
 	  <ProjectReference Include="..\..\DeepMeta\DeepCore.Unity.Assets\DeepCore.Unity.Assets.csproj" />
 	  <ProjectReference Include="..\..\DeepMeta\DeepCore.Unity.GUI\DeepCore.Unity.GUI.csproj" />
+	  <ProjectReference Include="..\..\DeepMeta\DeepCore.Unity3D.Win32\DeepCore.Unity3D.Win32.csproj" />
 	  <ProjectReference Include="..\..\DeepMeta\DeepCore.Unity3D\DeepCore.Unity3D.csproj" />
+	  <ProjectReference Include="..\..\DeepMeta\DeepCore.UnityEditor\DeepCore.UnityEditor.csproj" />
 	  <ProjectReference Include="..\..\DeepMeta\DeepCore.Unity\DeepCore.Unity.csproj" />
 	  <ProjectReference Include="..\..\DeepMeta\DeepCore\DeepCore.csproj" />
 	  <ProjectReference Include="..\..\DeepMeta\DeepMetaGame.Data\DeepMetaGame.Data.csproj" />
