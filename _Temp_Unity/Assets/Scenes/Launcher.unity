@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa494e56d8aa3034591c3b7a6189c9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameMode: 3
+  GameMode: 0
 --- !u!4 &174975343
 Transform:
   m_ObjectHideFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b7e535885fcc447a30b6cf109ba0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetMode: 1
+  AssetMode: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

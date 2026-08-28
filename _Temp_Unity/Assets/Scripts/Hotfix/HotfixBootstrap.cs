@@ -6,6 +6,7 @@ using _Temp_.Codec;
 using Cysharp.Threading.Tasks;
 using DeepCore;
 using DeepCore.Concurrent;
+using DeepCore.IO;
 using DeepCore.Net.WS;
 using DeepCore.NetClient;
 using DeepCore.PomeloClient;
@@ -14,6 +15,7 @@ using DeepMetaGame.Unity.Preview;
 using Gate.Client;
 using Hotfix.Battle;
 using System;
+using System.IO;
 using UnityEngine;
 using Yoo;
 
@@ -45,7 +47,14 @@ namespace Hotfix
         }
         //----------------------------------------------------------------------------------------------------
         protected override async UniTask OnInitBegin()
-        {
+        { 
+            if (Directory.Exists(EditorRootPath))
+            {
+            }
+            else if (new DirectoryInfo(Application.dataPath).TryFindParentDirectory(Path.Combine("GameEditor"), out var editorRoot))
+            {
+                EditorRootPath = editorRoot.FullName;
+            }
             // 微信 WebGL + Android 统一：注册 YooAssetResourceLoader（接管资源加载，走 MPQFiles 包）。
             // 两平台共用同一套加载链：dataDir 资源（data.gz.bytes / scenes）从 MPQFiles 包按 location
             // "Assets/MPQFiles/..." 异步加载。loader 的 IsStartWith 永远 true 接管所有，从路径里的
@@ -79,7 +88,7 @@ namespace Hotfix
         }
         protected override async UniTask OnInitFinish()
         {
-            // YooAssetManager.DefaultUnityPackage = "BasePackage";         
+            // YooAssetManager.DefaultUnityPackage = "DefaultPackage";         
             {
 #if UNITY_WEBGL
                 WSWebSocketAdapter.ENABLE_SENDING_POOL = false;
@@ -90,11 +99,11 @@ namespace Hotfix
                     PlayMode = GameEntry.Instance.EPlayMode,
                     DownloadingMaxCount = 20,
                     ReTryTimes = 3,
-                    DefaultPackageName = "BasePackage",
+                    DefaultPackageName = "DefaultPackage",
                 };
                 await YooAssetManager.InitYooAsset(data);
 #else
-                YooAssetManager.DefaultUnityPackage = "BasePackage";
+                YooAssetManager.DefaultUnityPackage = "DefaultPackage";
                 await YooAssetManager.InitYooAsset(null);
 #endif
                 await YooAssetManager.InitPackage();

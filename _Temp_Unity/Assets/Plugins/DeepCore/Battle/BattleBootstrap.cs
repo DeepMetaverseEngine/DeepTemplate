@@ -132,7 +132,7 @@ namespace DeepMetaGame.Unity.Preview
                 {
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
                     ClientFactory = new DeepCore.PomeloClient.PomeloClientFactory();
-                    EditorRootPath = $"file://{Application.dataPath}/../../GameEditor";
+                    EditorRootPath = $"file://{Application.dataPath}/../../../Data/GameEditor";
                     if (prop.TryGetValue("-editorRoot", out var root) && Directory.Exists(root))
                     {
                         EditorRootPath = new DirectoryInfo(Path.GetFullPath(root)).FullName;
@@ -140,13 +140,13 @@ namespace DeepMetaGame.Unity.Preview
                     else if (Directory.Exists(EditorRootPath))
                     {
                     }
-                    else if (new DirectoryInfo(Application.dataPath).TryFindParentDirectory(Path.Combine("GameEditor"), out var editorRoot))
+                    else if (new DirectoryInfo(Application.dataPath).TryFindParentDirectory(Path.Combine("Data", "GameEditor"), out var editorRoot))
                     {
                         EditorRootPath = editorRoot.FullName;
                     }
                     else
                     {
-                        EditorRootPath = $"file://{Application.dataPath}/../../GameEditor";
+                        EditorRootPath = $"file://{Application.dataPath}/../../../Data/GameEditor";
                     }
 #else
                     if (prop.TryGetValue("-editorRoot", out var root) && Directory.Exists(root))
