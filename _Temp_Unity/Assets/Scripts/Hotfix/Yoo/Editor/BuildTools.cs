@@ -67,7 +67,7 @@ public class BuildTools
         var buildParameters = new ScriptableBuildParameters();
         buildParameters.BuildOutputRoot = buildoutputRoot;
         buildParameters.BundledFileRoot = streamingAssetsRoot;
-        buildParameters.BuildPipeline = EBuildPipeline.LegacyBuildPipeline.ToString();
+        buildParameters.BuildPipeline = EBuildPipeline.ScriptableBuildPipeline.ToString();
         buildParameters.BuildBundleType = (int)EBundleType.AssetBundle; //����ָ����Դ������
         buildParameters.BuildTarget = buildTarget;
         buildParameters.PackageName = "DefaultPackage";
