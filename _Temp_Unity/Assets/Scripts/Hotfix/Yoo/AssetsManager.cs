@@ -689,7 +689,7 @@ namespace Yoo
             {
                 root = PathUtility.Combine(YooAssetRoot, packageName);
             }
-            else if (CFiles.TryFindParentDirectory(Environment.CurrentDirectory, Path.Combine("Data", "GameEditor", "res", "yoo"), out var editorRoot))
+            else if (CFiles.TryFindParentDirectory(Environment.CurrentDirectory, Path.Combine("GameEditor", "res", "yoo"), out var editorRoot))
             {
                 root = editorRoot + "/" + packageName;
             }

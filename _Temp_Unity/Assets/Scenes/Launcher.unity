@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b7e535885fcc447a30b6cf109ba0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssetMode: 0
+  AssetMode: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -90,6 +90,11 @@ namespace Hotfix
         {
             // YooAssetManager.DefaultUnityPackage = "DefaultPackage";         
             {
+                YooAssetManager.DefaultUnityPackage = "DefaultPackage";
+                //YooAssetParam.YooVersion = YooAssetClientManager.DefaultYooVersion;
+                YooAssetManager.YooAssetRoot = $"{EditorRootPath}/res/yoo";
+                YooAssetManager.DefaultUnityPackage = "DefaultPackage";
+                //YooAssetManager.DefaultYooVersion = YooAssetClientManager.DefaultYooVersion;
 #if UNITY_WEBGL
                 WSWebSocketAdapter.ENABLE_SENDING_POOL = false;
                 var data = new YooAssetData()
@@ -103,7 +108,15 @@ namespace Hotfix
                 };
                 await YooAssetManager.InitYooAsset(data);
 #else
-                YooAssetManager.DefaultUnityPackage = "DefaultPackage";
+                //                 await YooAssetManager.InitYooAsset(new YooAssetData()
+                //                 {
+                // //                     HostURL = GameEntry.Instance.hostURL,
+                // //                     FallbackURL = GameEntry.Instance.fallbackURL,
+                //                     PlayMode = YooAssetManager.DefaultPlayMode,
+                //                     DownloadingMaxCount = 20,
+                //                     ReTryTimes = 3,
+                //                     DefaultPackageName = "DefaultPackage",
+                //                 });
                 await YooAssetManager.InitYooAsset(null);
 #endif
                 await YooAssetManager.InitPackage();
