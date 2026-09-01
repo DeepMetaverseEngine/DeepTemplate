@@ -1,5 +1,7 @@
 using Cysharp.Threading.Tasks;
+using DeepCore;
 using DeepCore.Unity;
+using DeepCore.Unity3D;
 using DeepGame3D.Unity.BattleView;
 using DeepMetaGame.Data;
 using DeepMetaGame.Unity;
@@ -7,7 +9,9 @@ using DeepMetaGame.Unity.BattleView;
 using DeepMetaGame.Unity.BattleView.UI;
 using Spine.Unity;
 using System;
+using System.IO;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Yoo;
 using YooAsset;
 
@@ -74,16 +78,26 @@ namespace Hotfix.Battle
                 try
                 {
                     var path = file;
+                    //                     if (path.EndsWith(".unity", StringComparison.OrdinalIgnoreCase))
+                    //                     {
+                    //                         var handle = await AssetManager.Instance.LoadSceneAsync(path);
+                    //                         if (handle != null)
+                    //                         {
+                    //                             cb.Invoke(st, new _Temp_BaseAssetsTuple(file, resType, handle));
+                    //                             return;
+                    //                         }
+                    //                     }
+                    //                     else
+                    {
+                        var handle = await AssetManager.Instance.LoadAssetAsync(path);
+                        if (handle != null)
+                        {
+                            cb.Invoke(st, new _Temp_BaseAssetsTuple(file, resType, handle));
+                            return;
+                        }
+                    }
+                    cb.Invoke(st, null);
 
-                    var handle = await AssetManager.Instance.LoadAssetAsync(path);
-                    if (handle != null)
-                    {
-                        cb.Invoke(st, new _Temp_BaseAssetsTuple(file, resType, handle));
-                    }
-                    else
-                    {
-                        cb.Invoke(st, null);
-                    }
                 }
                 catch (Exception err)
                 {
@@ -98,7 +112,6 @@ namespace Hotfix.Battle
                 try
                 {
                     var path = file;
-
                     var handle = AssetManager.Instance.LoadAsset<GameObject>(path);
                     if (handle != null)
                     {
@@ -202,7 +215,65 @@ namespace Hotfix.Battle
                 spine = null;
                 return false;
             }
+
+            public override IAssetLoadingTask LoadSceneResource(UnityZone zone, BattleResourceLoaderHandler<UnityZone, IZoneResource> cb)
+            {
+//                 if (zone.layer.Data.FileName.EndsWith(".unity", StringComparison.OrdinalIgnoreCase))
+//                 {
+//                     var handle = await AssetManager.Instance.LoadSceneAsync(path);
+//                     if (handle != null)
+//                     {
+//                         cb.Invoke(st, new _Temp_BaseAssetsTuple(file, resType, handle));
+//                         return;
+//                     }
+//                 }
+                return base.LoadSceneResource(zone, cb);
+            }
         }
+//         class _Temp_SceneResource : Disposable, IZoneResource
+//         {
+//             private SceneHandle wrap;
+//             public UnityZone zone { get; private set; }
+//             public virtual bool Active
+//             {
+//                 get => wrap.gameObject.activeSelf;
+//                 set => wrap.gameObject.SetActive(value);
+//             }
+//             public virtual _Temp_SceneResource Init(UnityZone zone, SceneHandle wrap)
+//             {
+//                 this.wrap = wrap;
+//                 this.zone = zone;
+//                 var layer = zone.layer;
+//                 this.gameObject = wrap?.gameObject;
+//                 this.transform = wrap?.gameObject?.transform;
+//                 if (gameObject != null)
+//                 {
+//                     if (!string.IsNullOrEmpty(zone.config.RayCastTerrainLayerName))
+//                     {
+//                         gameObject.SetLayer(zone.config.RayCastTerrainLayerName);
+//                     }
+//                     //                     if (wrap.transform.TryGetComponentInChildren<Light>(out var sceneLight))
+//                     //                     {
+//                     //                         if (zone.DefaultLight != null)
+//                     //                         {
+//                     //                             zone.DefaultLight.enabled = false;
+//                     //                         }
+//                     //                         zone.DefaultLight = sceneLight;
+//                     //                     }
+//                 }
+//                 return this;
+//             }
+//             protected override void Disposing()
+//             {
+//                 wrap?.Dispose();
+//                 wrap = null;
+//                 zone = null;
+//             }
+//             public virtual void UpdateResource()
+//             {
+// 
+//             }
+//         }
 
 
     }

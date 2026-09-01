@@ -48,6 +48,6 @@ MonoBehaviour:
         CollectorType: 0
         AddressRuleName: AddressByFolderAndFileName
         PackRuleName: PackSeparately
-        FilterRuleName: CollectScene
+        FilterRuleName: CollectPrefab
         AssetTags: 
         UserData: 
