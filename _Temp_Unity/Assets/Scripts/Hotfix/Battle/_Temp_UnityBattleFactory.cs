@@ -14,6 +14,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Yoo;
 using YooAsset;
+using static DeepMetaGame.Unity.SimpleResourceComponent;
 
 namespace Hotfix.Battle
 {
@@ -218,62 +219,75 @@ namespace Hotfix.Battle
 
             public override IAssetLoadingTask LoadSceneResource(UnityZone zone, BattleResourceLoaderHandler<UnityZone, IZoneResource> cb)
             {
-//                 if (zone.layer.Data.FileName.EndsWith(".unity", StringComparison.OrdinalIgnoreCase))
-//                 {
-//                     var handle = await AssetManager.Instance.LoadSceneAsync(path);
-//                     if (handle != null)
-//                     {
-//                         cb.Invoke(st, new _Temp_BaseAssetsTuple(file, resType, handle));
-//                         return;
-//                     }
-//                 }
+                //                 if (zone.layer.Data.FileName.EndsWith(".unity", StringComparison.OrdinalIgnoreCase))
+                //                 {
+                //                     var handle = await AssetManager.Instance.LoadSceneAsync(path);
+                //                     if (handle != null)
+                //                     {
+                //                         cb.Invoke(st, new _Temp_BaseAssetsTuple(file, resType, handle));
+                //                         return;
+                //                     }
+                //                 }
                 return base.LoadSceneResource(zone, cb);
             }
         }
-//         class _Temp_SceneResource : Disposable, IZoneResource
-//         {
-//             private SceneHandle wrap;
-//             public UnityZone zone { get; private set; }
-//             public virtual bool Active
-//             {
-//                 get => wrap.gameObject.activeSelf;
-//                 set => wrap.gameObject.SetActive(value);
-//             }
-//             public virtual _Temp_SceneResource Init(UnityZone zone, SceneHandle wrap)
-//             {
-//                 this.wrap = wrap;
-//                 this.zone = zone;
-//                 var layer = zone.layer;
-//                 this.gameObject = wrap?.gameObject;
-//                 this.transform = wrap?.gameObject?.transform;
-//                 if (gameObject != null)
-//                 {
-//                     if (!string.IsNullOrEmpty(zone.config.RayCastTerrainLayerName))
-//                     {
-//                         gameObject.SetLayer(zone.config.RayCastTerrainLayerName);
-//                     }
-//                     //                     if (wrap.transform.TryGetComponentInChildren<Light>(out var sceneLight))
-//                     //                     {
-//                     //                         if (zone.DefaultLight != null)
-//                     //                         {
-//                     //                             zone.DefaultLight.enabled = false;
-//                     //                         }
-//                     //                         zone.DefaultLight = sceneLight;
-//                     //                     }
-//                 }
-//                 return this;
-//             }
-//             protected override void Disposing()
-//             {
-//                 wrap?.Dispose();
-//                 wrap = null;
-//                 zone = null;
-//             }
-//             public virtual void UpdateResource()
-//             {
-// 
-//             }
-//         }
+
+        class _Temp_UnitResource : SimpleUnitRes
+        {
+            protected override bool TryPlayAnimator(UnityZoneUnit.UnityActionStatus status, string StateName, float speed, bool loop, float NormalizeTime)
+            {
+                if (base.TryPlayAnimator(status, StateName, speed, loop, NormalizeTime))
+                {
+                    return true;
+                }
+                return false;
+            }
+
+        }
+        //         class _Temp_SceneResource : Disposable, IZoneResource
+        //         {
+        //             private SceneHandle wrap;
+        //             public UnityZone zone { get; private set; }
+        //             public virtual bool Active
+        //             {
+        //                 get => wrap.gameObject.activeSelf;
+        //                 set => wrap.gameObject.SetActive(value);
+        //             }
+        //             public virtual _Temp_SceneResource Init(UnityZone zone, SceneHandle wrap)
+        //             {
+        //                 this.wrap = wrap;
+        //                 this.zone = zone;
+        //                 var layer = zone.layer;
+        //                 this.gameObject = wrap?.gameObject;
+        //                 this.transform = wrap?.gameObject?.transform;
+        //                 if (gameObject != null)
+        //                 {
+        //                     if (!string.IsNullOrEmpty(zone.config.RayCastTerrainLayerName))
+        //                     {
+        //                         gameObject.SetLayer(zone.config.RayCastTerrainLayerName);
+        //                     }
+        //                     //                     if (wrap.transform.TryGetComponentInChildren<Light>(out var sceneLight))
+        //                     //                     {
+        //                     //                         if (zone.DefaultLight != null)
+        //                     //                         {
+        //                     //                             zone.DefaultLight.enabled = false;
+        //                     //                         }
+        //                     //                         zone.DefaultLight = sceneLight;
+        //                     //                     }
+        //                 }
+        //                 return this;
+        //             }
+        //             protected override void Disposing()
+        //             {
+        //                 wrap?.Dispose();
+        //                 wrap = null;
+        //                 zone = null;
+        //             }
+        //             public virtual void UpdateResource()
+        //             {
+        // 
+        //             }
+        //         }
 
 
     }

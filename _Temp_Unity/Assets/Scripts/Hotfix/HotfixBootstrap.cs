@@ -72,19 +72,12 @@ namespace Hotfix
                 mpqPackageName: "MPQFiles");
 #endif
 
-#if UNITY_EDITOR
-            // Editor 下 F6 热重载需要直接读取导表生成的 JSON，不能被旧的 .json.bin 截走。
-            // 必须在 DataCenter 创建前关闭，否则已经创建的 BinDataLoader 仍会优先读二进制。
-            TemplateDataCenter.ENABLE_LOAD_FROM_BIN = false;
-#else
-            TemplateDataCenter.ENABLE_LOAD_FROM_BIN = true;
-#endif
-            TemplateDataCenter.ENABLE_BATCH_LOAD = false;
-
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN         
             new DeepCore.Template.NewtonJson.NewtonJsonTemplateLoader(true);
+            TemplateDataCenter.ENABLE_LOAD_FROM_BIN = false;
+            TemplateDataCenter.ENABLE_BATCH_LOAD = false;
+            TypeAllocRecorder.ENABLE_STATISTICS = true;
 #endif
-            TypeAllocRecorder.ENABLE_STATISTICS = false;
         }
         protected override async UniTask OnInitFinish()
         {
