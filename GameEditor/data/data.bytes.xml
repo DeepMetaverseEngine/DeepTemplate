@@ -93,14 +93,95 @@
     </Brushes>
   </DefaultTerrainDefinitions>
   <DefaultUnitActionDefinitions>
-    <ActionMap element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitAction" Comment="动作集合" />
+    <ActionMap element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitAction" Comment="动作集合">
+      <element>
+        <Action Comment="动作">Idle</Action>
+        <ActionQueue element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame" Comment="动作序列">
+          <element>
+            <ActionEffect IsNull="true" />
+            <ActionLayer Comment="动作分层">Movement</ActionLayer>
+            <ActionLayerWeight Comment="动作分层权重">1</ActionLayerWeight>
+            <ActionName Comment="动作名">Idle</ActionName>
+            <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作状参数">
+              <element>
+                <FloatValue>0</FloatValue>
+                <ParamName>Speed_f</ParamName>
+                <Trigger IsNull="true" />
+                <ValueType>Float</ValueType>
+              </element>
+            </ActionParams>
+            <ActionState element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+State" Comment="动作状态组">
+              <element>
+                <Layer IsNull="true" />
+                <LayerWeight Comment="动作分层权重">1</LayerWeight>
+                <StateName IsNull="true" />
+              </element>
+            </ActionState>
+            <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+            <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
+              <FuncID IsNull="true" />
+            </CustomAction>
+            <Cycle Comment="是否循环">True</Cycle>
+            <RepeatCount Comment="循环播几次">0</RepeatCount>
+            <SoundName IsNull="true" />
+            <Speed Comment="播放速度">1</Speed>
+            <SubStateKey IsNull="true" />
+            <Tag Comment="Tag"></Tag>
+            <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
+          </element>
+        </ActionQueue>
+        <CustomResource IsNull="true" />
+        <CustomResourceOverride Comment="自定义的模型是否覆盖本体">False</CustomResourceOverride>
+        <SubState IsNull="true" />
+      </element>
+      <element>
+        <Action Comment="动作">Move</Action>
+        <ActionQueue element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame" Comment="动作序列">
+          <element>
+            <ActionEffect IsNull="true" />
+            <ActionLayer Comment="动作分层">Movement</ActionLayer>
+            <ActionLayerWeight Comment="动作分层权重">1</ActionLayerWeight>
+            <ActionName Comment="动作名">Run</ActionName>
+            <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作状参数">
+              <element>
+                <FloatValue>1</FloatValue>
+                <ParamName>Speed_f</ParamName>
+                <Trigger IsNull="true" />
+                <ValueType>Float</ValueType>
+              </element>
+            </ActionParams>
+            <ActionState element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+State" Comment="动作状态组">
+              <element>
+                <Layer IsNull="true" />
+                <LayerWeight Comment="动作分层权重">1</LayerWeight>
+                <StateName IsNull="true" />
+              </element>
+            </ActionState>
+            <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+            <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
+              <FuncID IsNull="true" />
+            </CustomAction>
+            <Cycle Comment="是否循环">True</Cycle>
+            <RepeatCount Comment="循环播几次">0</RepeatCount>
+            <SoundName IsNull="true" />
+            <Speed Comment="播放速度">1</Speed>
+            <SubStateKey IsNull="true" />
+            <Tag Comment="Tag"></Tag>
+            <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
+          </element>
+        </ActionQueue>
+        <CustomResource IsNull="true" />
+        <CustomResourceOverride Comment="自定义的模型是否覆盖本体">False</CustomResourceOverride>
+        <SubState IsNull="true" />
+      </element>
+    </ActionMap>
   </DefaultUnitActionDefinitions>
   <GlobalCFG type="_Temp_.Battle.Data.Properties._Temp_Global" Comment="_Temp_Global" />
   <Items key_type="System.Int32" value_type="DeepMetaGame.Data.Template.ItemTemplate" Comment="掉落道具类数据结构" />
   <ResourcePropertiesMap>
     <PropertiesMap key_type="System.String" value_type="DeepMetaGame.Data.IResourceProperties" />
   </ResourcePropertiesMap>
-  <ResourceVersion>6d448aabc4f3852b87ac9f80387afd3f</ResourceVersion>
+  <ResourceVersion>833de6a591d3ec440507511710e2bbf7</ResourceVersion>
   <Skills key_type="System.Int32" value_type="DeepMetaGame.Data.Template.SkillTemplate" Comment="技能模板">
     <element>
       <key>10001</key>
@@ -108,79 +189,7 @@
         <Abilities element_type="DeepMetaGame.Data.Template.ISkillTemplateAbility" Comment="能力" />
         <ActionPriority Comment="技能优先级，高优先级可打断低优先级">0</ActionPriority>
         <ActionQueue element_type="DeepMetaGame.Data.Template.UnitActionData" Comment="攻击动作序列">
-          <element>
-            <Action Comment="动作">
-              <ActionEffect IsNull="true" />
-              <ActionLayer IsNull="true" />
-              <ActionName Comment="动作名">f_idle</ActionName>
-              <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
-              <Cycle Comment="是否循环">True</Cycle>
-              <RepeatCount Comment="循环播几次">0</RepeatCount>
-              <SoundName IsNull="true" />
-              <Speed Comment="播放速度">1</Speed>
-              <SubStateKey IsNull="true" />
-              <Tag Comment="Tag"></Tag>
-              <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
-            </Action>
-            <ActionEffect IsNull="true" />
-            <BodyBlockOnAttackRange Comment="在攻击范围内，如果位移则挤开目标">True</BodyBlockOnAttackRange>
-            <BodyHit IsNull="true" />
-            <FuncID IsNull="true" />
-            <IsCancelable Comment="移动可取消动作">False</IsCancelable>
-            <IsCancelableBySkill Comment="技能可取消动作">False</IsCancelableBySkill>
-            <IsControlFaceable Comment="动作中可以控制转向">False</IsControlFaceable>
-            <IsControlMoveable Comment="动作中是否可以控制移动">False</IsControlMoveable>
-            <IsFaceToTarget Comment="动作中是否面向目标">False</IsFaceToTarget>
-            <IsInvisible Comment="动作是否隐身">False</IsInvisible>
-            <IsJumpLockTarget Comment="跳跃锁定目标，目标必须在攻击范围内">False</IsJumpLockTarget>
-            <IsJumpToTarget Comment="(冲锋)：移动到目标根据(距离/动作时间)来算速度，如果目标在原地，则原地跳跃。">False</IsJumpToTarget>
-            <IsMoveToTarget Comment="(冲锋)：移动到目标。">False</IsMoveToTarget>
-            <IsMoveToTargetStopAction Comment="冲锋或跳跃到目标时是否立即结束当前动作">False</IsMoveToTargetStopAction>
-            <IsNoneBlock Comment="是否进入霸体状态，不会被打断">False</IsNoneBlock>
-            <IsNoneTouch Comment="动作期间是否无碰撞">False</IsNoneTouch>
-            <KeyFrames element_type="DeepMetaGame.Data.Template.UnitActionData+KeyFrame" Comment="所有关键帧">
-              <element>
-                <Attack Comment="攻击属性ID">
-                  <Attack Comment="攻击力">1</Attack>
-                  <Buff IsNull="true" />
-                  <CrushEffect IsNull="true" />
-                  <CrushPercent Comment="百分比概率击碎目标">0</CrushPercent>
-                  <Effect IsNull="true" />
-                  <FuncID IsNull="true" />
-                  <MaskDamage Comment="产生受击">False</MaskDamage>
-                  <MaskKnockDown Comment="产生击倒">False</MaskKnockDown>
-                  <MaskMustCritical Comment="此次攻击必暴击，即使暴击为0">False</MaskMustCritical>
-                  <MaskMustHit Comment="此次攻击必命中，即使命中为0">False</MaskMustHit>
-                  <mSN>23</mSN>
-                  <Properties type="_Temp_.Battle.Data.Properties._Temp_AttackProperties" Comment="用户自定义扩展属性">
-                    <FuncID IsNull="true" />
-                  </Properties>
-                  <Spell IsNull="true" />
-                  <StopFrameAction IsNull="true" />
-                  <StopFrameMS Comment="定帧时长">0</StopFrameMS>
-                </Attack>
-                <Blink IsNull="true" />
-                <ChangeStatus IsNull="true" />
-                <ChangeTarget IsNull="true" />
-                <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
-                  <FuncID IsNull="true" />
-                </CustomAction>
-                <Effect IsNull="true" />
-                <FrameMS Comment="关键帧时间(毫秒)">500</FrameMS>
-                <FuncID IsNull="true" />
-                <Move IsNull="true" />
-                <SelfAura IsNull="true" />
-                <SelfBuff IsNull="true" />
-                <Spell IsNull="true" />
-                <Summon IsNull="true" />
-              </element>
-            </KeyFrames>
-            <MoveToTargetSpeedSEC Comment="移动到目标速度">10</MoveToTargetSpeedSEC>
-            <OverrideAttackShape IsNull="true" />
-            <TargetOffset Comment="位移到目标位偏移量">0</TargetOffset>
-            <TargetPos Comment="位移到目标位置">Body</TargetPos>
-            <TriggerNextActionWaitTimeMS Comment="可触发下一段攻击的等待时间（毫秒）">0</TriggerNextActionWaitTimeMS>
-          </element>
+          <element />
         </ActionQueue>
         <ActionSpeedRate Comment="动作播放速率">1</ActionSpeedRate>
         <AttackBodyTouchRange Comment="技能和目标的保持距离">0</AttackBodyTouchRange>
@@ -230,79 +239,7 @@
         <Abilities element_type="DeepMetaGame.Data.Template.ISkillTemplateAbility" Comment="能力" />
         <ActionPriority Comment="技能优先级，高优先级可打断低优先级">0</ActionPriority>
         <ActionQueue element_type="DeepMetaGame.Data.Template.UnitActionData" Comment="攻击动作序列">
-          <element>
-            <Action Comment="动作">
-              <ActionEffect IsNull="true" />
-              <ActionLayer IsNull="true" />
-              <ActionName Comment="动作名">f_idle</ActionName>
-              <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
-              <Cycle Comment="是否循环">True</Cycle>
-              <RepeatCount Comment="循环播几次">0</RepeatCount>
-              <SoundName IsNull="true" />
-              <Speed Comment="播放速度">1</Speed>
-              <SubStateKey IsNull="true" />
-              <Tag Comment="Tag"></Tag>
-              <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
-            </Action>
-            <ActionEffect IsNull="true" />
-            <BodyBlockOnAttackRange Comment="在攻击范围内，如果位移则挤开目标">True</BodyBlockOnAttackRange>
-            <BodyHit IsNull="true" />
-            <FuncID IsNull="true" />
-            <IsCancelable Comment="移动可取消动作">False</IsCancelable>
-            <IsCancelableBySkill Comment="技能可取消动作">False</IsCancelableBySkill>
-            <IsControlFaceable Comment="动作中可以控制转向">False</IsControlFaceable>
-            <IsControlMoveable Comment="动作中是否可以控制移动">False</IsControlMoveable>
-            <IsFaceToTarget Comment="动作中是否面向目标">False</IsFaceToTarget>
-            <IsInvisible Comment="动作是否隐身">False</IsInvisible>
-            <IsJumpLockTarget Comment="跳跃锁定目标，目标必须在攻击范围内">False</IsJumpLockTarget>
-            <IsJumpToTarget Comment="(冲锋)：移动到目标根据(距离/动作时间)来算速度，如果目标在原地，则原地跳跃。">False</IsJumpToTarget>
-            <IsMoveToTarget Comment="(冲锋)：移动到目标。">False</IsMoveToTarget>
-            <IsMoveToTargetStopAction Comment="冲锋或跳跃到目标时是否立即结束当前动作">False</IsMoveToTargetStopAction>
-            <IsNoneBlock Comment="是否进入霸体状态，不会被打断">False</IsNoneBlock>
-            <IsNoneTouch Comment="动作期间是否无碰撞">False</IsNoneTouch>
-            <KeyFrames element_type="DeepMetaGame.Data.Template.UnitActionData+KeyFrame" Comment="所有关键帧">
-              <element>
-                <Attack Comment="攻击属性ID">
-                  <Attack Comment="攻击力">1</Attack>
-                  <Buff IsNull="true" />
-                  <CrushEffect IsNull="true" />
-                  <CrushPercent Comment="百分比概率击碎目标">0</CrushPercent>
-                  <Effect IsNull="true" />
-                  <FuncID IsNull="true" />
-                  <MaskDamage Comment="产生受击">False</MaskDamage>
-                  <MaskKnockDown Comment="产生击倒">False</MaskKnockDown>
-                  <MaskMustCritical Comment="此次攻击必暴击，即使暴击为0">False</MaskMustCritical>
-                  <MaskMustHit Comment="此次攻击必命中，即使命中为0">False</MaskMustHit>
-                  <mSN>24</mSN>
-                  <Properties type="_Temp_.Battle.Data.Properties._Temp_AttackProperties" Comment="用户自定义扩展属性">
-                    <FuncID IsNull="true" />
-                  </Properties>
-                  <Spell IsNull="true" />
-                  <StopFrameAction IsNull="true" />
-                  <StopFrameMS Comment="定帧时长">0</StopFrameMS>
-                </Attack>
-                <Blink IsNull="true" />
-                <ChangeStatus IsNull="true" />
-                <ChangeTarget IsNull="true" />
-                <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
-                  <FuncID IsNull="true" />
-                </CustomAction>
-                <Effect IsNull="true" />
-                <FrameMS Comment="关键帧时间(毫秒)">500</FrameMS>
-                <FuncID IsNull="true" />
-                <Move IsNull="true" />
-                <SelfAura IsNull="true" />
-                <SelfBuff IsNull="true" />
-                <Spell IsNull="true" />
-                <Summon IsNull="true" />
-              </element>
-            </KeyFrames>
-            <MoveToTargetSpeedSEC Comment="移动到目标速度">10</MoveToTargetSpeedSEC>
-            <OverrideAttackShape IsNull="true" />
-            <TargetOffset Comment="位移到目标位偏移量">0</TargetOffset>
-            <TargetPos Comment="位移到目标位置">Body</TargetPos>
-            <TriggerNextActionWaitTimeMS Comment="可触发下一段攻击的等待时间（毫秒）">0</TriggerNextActionWaitTimeMS>
-          </element>
+          <element />
         </ActionQueue>
         <ActionSpeedRate Comment="动作播放速率">1</ActionSpeedRate>
         <AttackBodyTouchRange Comment="技能和目标的保持距离">0</AttackBodyTouchRange>
@@ -352,82 +289,7 @@
         <Abilities element_type="DeepMetaGame.Data.Template.ISkillTemplateAbility" Comment="能力" />
         <ActionPriority Comment="技能优先级，高优先级可打断低优先级">0</ActionPriority>
         <ActionQueue element_type="DeepMetaGame.Data.Template.UnitActionData" Comment="攻击动作序列">
-          <element>
-            <Action Comment="动作">
-              <ActionEffect IsNull="true" />
-              <ActionLayer IsNull="true" />
-              <ActionName Comment="动作名">f_idle</ActionName>
-              <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
-              <Cycle Comment="是否循环">True</Cycle>
-              <RepeatCount Comment="循环播几次">0</RepeatCount>
-              <SoundName IsNull="true" />
-              <Speed Comment="播放速度">1</Speed>
-              <SubStateKey IsNull="true" />
-              <Tag Comment="Tag"></Tag>
-              <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
-            </Action>
-            <ActionEffect IsNull="true" />
-            <BodyBlockOnAttackRange Comment="在攻击范围内，如果位移则挤开目标">True</BodyBlockOnAttackRange>
-            <BodyHit IsNull="true" />
-            <FuncID IsNull="true" />
-            <IsCancelable Comment="移动可取消动作">False</IsCancelable>
-            <IsCancelableBySkill Comment="技能可取消动作">False</IsCancelableBySkill>
-            <IsControlFaceable Comment="动作中可以控制转向">False</IsControlFaceable>
-            <IsControlMoveable Comment="动作中是否可以控制移动">False</IsControlMoveable>
-            <IsFaceToTarget Comment="动作中是否面向目标">False</IsFaceToTarget>
-            <IsInvisible Comment="动作是否隐身">False</IsInvisible>
-            <IsJumpLockTarget Comment="跳跃锁定目标，目标必须在攻击范围内">False</IsJumpLockTarget>
-            <IsJumpToTarget Comment="(冲锋)：移动到目标根据(距离/动作时间)来算速度，如果目标在原地，则原地跳跃。">False</IsJumpToTarget>
-            <IsMoveToTarget Comment="(冲锋)：移动到目标。">False</IsMoveToTarget>
-            <IsMoveToTargetStopAction Comment="冲锋或跳跃到目标时是否立即结束当前动作">False</IsMoveToTargetStopAction>
-            <IsNoneBlock Comment="是否进入霸体状态，不会被打断">False</IsNoneBlock>
-            <IsNoneTouch Comment="动作期间是否无碰撞">False</IsNoneTouch>
-            <KeyFrames element_type="DeepMetaGame.Data.Template.UnitActionData+KeyFrame" Comment="所有关键帧">
-              <element>
-                <Attack IsNull="true" />
-                <Blink IsNull="true" />
-                <ChangeStatus IsNull="true" />
-                <ChangeTarget IsNull="true" />
-                <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
-                  <FuncID IsNull="true" />
-                </CustomAction>
-                <Effect IsNull="true" />
-                <FrameMS Comment="关键帧时间(毫秒)">500</FrameMS>
-                <FuncID IsNull="true" />
-                <Move IsNull="true" />
-                <SelfAura IsNull="true" />
-                <SelfBuff IsNull="true" />
-                <Spell Comment="关键帧产生的法术或远程道具单位模板ID">
-                  <ChainLevel Comment="连锁等级，只在技能中LaunchSpell有效（闪电链类数量，如果Spell launch spell ID一致，则传递此值）如果为0，则不传递相同的Spell。">0</ChainLevel>
-                  <FinalChainSpell IsNull="true" />
-                  <FromSpellMagnitude Comment="Spell发射Straight Spell时，是否传递速度权重(Normal and Speed)">False</FromSpellMagnitude>
-                  <FromUnitBody Comment="填True，下面无效，发射口是否以单位炮口作为参考">True</FromUnitBody>
-                  <FuncID IsNull="true" />
-                  <InheritDamageTargetList Comment="弹射类子弹忽略弹射本体">False</InheritDamageTargetList>
-                  <IsAutoSeekingTarget Comment="自动锁定范围内目标">False</IsAutoSeekingTarget>
-                  <LaunchPercent Comment="触发百分比">100</LaunchPercent>
-                  <mSN>25</mSN>
-                  <PType Comment="触发新的法术运行方式">POS_TYPE_DEFAULT_SINGLE</PType>
-                  <RandomAngle Comment="随机角度">0</RandomAngle>
-                  <RepeatCount Comment="连续触发次数">0</RepeatCount>
-                  <RepeatIntervalMS Comment="连续触发间距">100</RepeatIntervalMS>
-                  <ResetSeekingTarget IsNull="true" />
-                  <SenderUnit Comment="发射者">Sender</SenderUnit>
-                  <SpellID Comment="触发新的法术">10001</SpellID>
-                  <SpellLevel Comment="法术等级">0</SpellLevel>
-                  <StartAngle Comment="发射初始弧度">0</StartAngle>
-                  <StartDirection Comment="法术起始方向">Sender</StartDirection>
-                  <SubSpells IsNull="true" />
-                </Spell>
-                <Summon IsNull="true" />
-              </element>
-            </KeyFrames>
-            <MoveToTargetSpeedSEC Comment="移动到目标速度">10</MoveToTargetSpeedSEC>
-            <OverrideAttackShape IsNull="true" />
-            <TargetOffset Comment="位移到目标位偏移量">0</TargetOffset>
-            <TargetPos Comment="位移到目标位置">Body</TargetPos>
-            <TriggerNextActionWaitTimeMS Comment="可触发下一段攻击的等待时间（毫秒）">0</TriggerNextActionWaitTimeMS>
-          </element>
+          <element />
         </ActionQueue>
         <ActionSpeedRate Comment="动作播放速率">1</ActionSpeedRate>
         <AttackBodyTouchRange Comment="技能和目标的保持距离">0</AttackBodyTouchRange>
@@ -700,7 +562,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -710,9 +572,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -806,7 +668,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -816,9 +678,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -912,7 +774,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -922,9 +784,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -1018,7 +880,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -1028,9 +890,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -1124,7 +986,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -1134,9 +996,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -1230,7 +1092,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -1240,9 +1102,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -1336,7 +1198,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -1346,9 +1208,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">
@@ -1442,7 +1304,7 @@
             <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+            <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
             <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
             <FuncID IsNull="true" />
             <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -1452,9 +1314,9 @@
             <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
             <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
             <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-            <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+            <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
             <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+            <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
           </element>
           <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
             <BaseSkillID Comment="此单位普通攻击技能">

@@ -31,7 +31,7 @@
       <StaminaRecoveryPoint Comment="耐力恢复/恢复间隔">10</StaminaRecoveryPoint>
     </element>
     <element type="DeepMetaGame.Data.Template.UnitMotionAbility" Comment="4.移动能力">
-      <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">0</BodyTurnSpeedSEC>
+      <BodyTurnSpeedSEC Comment="身体跟随转动速度(弧度)">6.2831855</BodyTurnSpeedSEC>
       <Control Comment="控制朝向方式">FaceToMoveDirection</Control>
       <FuncID IsNull="true" />
       <IsMoveable Comment="是否可移动">True</IsMoveable>
@@ -41,9 +41,9 @@
       <JumpMoveSpeed Comment="跳跃移动速度">6</JumpMoveSpeed>
       <JumpZSpeed Comment="跳跃上升初速度">6</JumpZSpeed>
       <MoveAnimateRate Comment="移动速度动画速度播放比率">1</MoveAnimateRate>
-      <MoveSpeedSEC Comment="移动速度(距离/每秒)">6</MoveSpeedSEC>
+      <MoveSpeedSEC Comment="移动速度(距离/每秒)">3</MoveSpeedSEC>
       <ScaleAnimateRate Comment="缩放动画速度播放比率">0.38</ScaleAnimateRate>
-      <TurnSpeedSEC Comment="转脸速度（弧度/秒）">0</TurnSpeedSEC>
+      <TurnSpeedSEC Comment="转脸速度（弧度/秒）">6.2831855</TurnSpeedSEC>
     </element>
     <element type="DeepMetaGame.Data.Template.UnitSkillAbility" Comment="5.技能能力">
       <BaseSkillID Comment="此单位普通攻击技能">
