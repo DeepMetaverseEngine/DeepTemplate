@@ -48,7 +48,7 @@ namespace _Temp_.Battle.Data
             if (owner is UnitEventTemplate uevent) return new _Temp_EventProperties();
             if (owner is AttackProp attack) return new _Temp_AttackProperties();
             if (owner is LaunchEffect effect) return new _Temp_EffectProperties();
-            if (owner is BaseKeyFrame kf) return new _Temp_CustomKeyFrame();
+            if (owner is IKeyFrame kf) return new _Temp_CustomKeyFrame();
             throw new NotImplementedException();
         }
         public override EditorDataCenter CreateDataCenter(EditorTemplates root)
