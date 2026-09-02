@@ -3,6 +3,7 @@
 .state
 .conflict
 .clipboard_transform
+*.log
 /.bin
 /.bin_unity
 /state
