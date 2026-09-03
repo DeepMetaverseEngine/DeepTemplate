@@ -6,33 +6,29 @@
       <ActionQueue element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame" Comment="动作序列">
         <element>
           <ActionEffect IsNull="true" />
-          <ActionLayer Comment="动作分层">Movement</ActionLayer>
-          <ActionLayerWeight Comment="动作分层权重">1</ActionLayerWeight>
-          <ActionName Comment="动作名">Idle</ActionName>
-          <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作状参数">
+          <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作参数">
             <element>
               <FloatValue>0</FloatValue>
               <ParamName>Speed_f</ParamName>
-              <Trigger IsNull="true" />
               <ValueType>Float</ValueType>
             </element>
           </ActionParams>
-          <ActionState element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+State" Comment="动作状态组">
-            <element>
-              <Layer IsNull="true" />
-              <LayerWeight Comment="动作分层权重">1</LayerWeight>
-              <StateName IsNull="true" />
-            </element>
-          </ActionState>
-          <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+          <ActionTriggers element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Trigger" Comment="动作触发器" />
           <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
             <FuncID IsNull="true" />
           </CustomAction>
           <Cycle Comment="是否循环">True</Cycle>
+          <DefaultState Comment="默认状态">
+            <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+            <LayerName Comment="动作分层">Movement</LayerName>
+            <LayerWeight Comment="动作分层权重">1</LayerWeight>
+            <StateName Comment="动作名">Idle</StateName>
+          </DefaultState>
           <RepeatCount Comment="循环播几次">0</RepeatCount>
           <SoundName IsNull="true" />
           <Speed Comment="播放速度">1</Speed>
           <SubStateKey IsNull="true" />
+          <SubStates element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Layer" Comment="分层状态" />
           <Tag Comment="Tag"></Tag>
           <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
         </element>
@@ -46,33 +42,29 @@
       <ActionQueue element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame" Comment="动作序列">
         <element>
           <ActionEffect IsNull="true" />
-          <ActionLayer Comment="动作分层">Movement</ActionLayer>
-          <ActionLayerWeight Comment="动作分层权重">1</ActionLayerWeight>
-          <ActionName Comment="动作名">Run</ActionName>
-          <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作状参数">
+          <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作参数">
             <element>
               <FloatValue>1</FloatValue>
               <ParamName>Speed_f</ParamName>
-              <Trigger IsNull="true" />
               <ValueType>Float</ValueType>
             </element>
           </ActionParams>
-          <ActionState element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+State" Comment="动作状态组">
-            <element>
-              <Layer IsNull="true" />
-              <LayerWeight Comment="动作分层权重">1</LayerWeight>
-              <StateName IsNull="true" />
-            </element>
-          </ActionState>
-          <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+          <ActionTriggers element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Trigger" Comment="动作触发器" />
           <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
             <FuncID IsNull="true" />
           </CustomAction>
           <Cycle Comment="是否循环">True</Cycle>
+          <DefaultState Comment="默认状态">
+            <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+            <LayerName Comment="动作分层">Movement</LayerName>
+            <LayerWeight Comment="动作分层权重">1</LayerWeight>
+            <StateName Comment="动作名">Run</StateName>
+          </DefaultState>
           <RepeatCount Comment="循环播几次">0</RepeatCount>
           <SoundName IsNull="true" />
           <Speed Comment="播放速度">1</Speed>
           <SubStateKey IsNull="true" />
+          <SubStates element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Layer" Comment="分层状态" />
           <Tag Comment="Tag"></Tag>
           <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">1000</TimeMS>
         </element>
