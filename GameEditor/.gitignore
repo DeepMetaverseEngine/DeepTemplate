@@ -3,6 +3,7 @@
 .state
 .conflict
 .clipboard_transform
+buildlogtep.json
 *.log
 /.bin
 /.bin_unity
