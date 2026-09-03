@@ -3,10 +3,10 @@
   <Abilities element_type="DeepMetaGame.Data.Template.ISpellTemplateAbility" Comment="能力" />
   <Attributes IsNull="true" />
   <BindingEffect IsNull="true" />
-  <BodyHeight Comment="法术自身高度">0.125</BodyHeight>
+  <BodyHeight Comment="法术自身高度">0.2</BodyHeight>
   <BodyHitVoxelAnchor Comment="法术判定范围对齐方式">NA</BodyHitVoxelAnchor>
   <BodyShape Comment="攻击范围类型">Round</BodyShape>
-  <BodySize Comment="尺寸，半径（Round, Fan, Circle）">0.5</BodySize>
+  <BodySize Comment="尺寸，半径（Round, Fan, Circle）">0.1</BodySize>
   <BodyVoxelAnchor Comment="法术高度对齐方式">Floating</BodyVoxelAnchor>
   <BonesBegin IsNull="true" />
   <BonesEnd IsNull="true" />
@@ -19,7 +19,7 @@
   <EditorPath Comment=""></EditorPath>
   <ExpectTarget Comment="法术期望作用目标">Enemy</ExpectTarget>
   <FileBodyScale Comment="缩放比率">1</FileBodyScale>
-  <FileName IsNull="true" />
+  <FileName Comment="模型名字或者Perfab名字">Assets/ArtWork/Lowpoly/PolygonMilitary/Prefabs/FX/FX_Bullet_Trail_Mesh.prefab</FileName>
   <FileNameDestory IsNull="true" />
   <FileNameSpawn IsNull="true" />
   <FilterAffect Comment="过滤范围内目标">Random</FilterAffect>
@@ -55,7 +55,65 @@
     <Summon IsNull="true" />
   </HitIntervalKeyFrame>
   <HitIntervalMS Comment="每间隔多少时间就触发一次，0 适用于穿透性，但只对单位造成一次伤害（毫秒）">0</HitIntervalMS>
-  <HitOnExplosion Comment="击中就消失(爆炸)，和HitIntervalMS冲突">False</HitOnExplosion>
+  <HitOnExplosion Comment="击中就消失(爆炸)，和HitIntervalMS冲突">True</HitOnExplosion>
+  <HitOnExplosionKeyFrame Comment="击中就消失(爆炸)关键帧，适用于打到就爆和Cannon类法术">
+    <Attack Comment="攻击伤害">
+      <Attack Comment="攻击力">1</Attack>
+      <Buff IsNull="true" />
+      <CrushEffect IsNull="true" />
+      <CrushPercent Comment="百分比概率击碎目标">0</CrushPercent>
+      <Effect Comment="被击中特效">
+        <AnimName IsNull="true" />
+        <AutoFitBindBodySize Comment="是否根据绑定物bodysize缩放">False</AutoFitBindBodySize>
+        <BindBody Comment="触发特效是否绑定在单位(坐标)">False</BindBody>
+        <BindBodyDirection Comment="触发特效是否绑定在单位(方向)">True</BindBodyDirection>
+        <BindingOffsetAngle360 Comment="如果为绑定，绑定角度偏移量">0</BindingOffsetAngle360>
+        <BindingOffsetDistance Comment="如果为绑定，绑定长度偏移量">0</BindingOffsetDistance>
+        <BindingOffsetZ Comment="如果为绑定，绑定Z高度偏移量">0</BindingOffsetZ>
+        <BindPartName IsNull="true" />
+        <Blur IsNull="true" />
+        <BodyVoxelAnchor Comment="高度对齐方式">Floating</BodyVoxelAnchor>
+        <Camera IsNull="true" />
+        <DeadTimeMS Comment="特效消亡后的持续时间">0</DeadTimeMS>
+        <EffectTimeMS Comment="特效持续时间。（0表示只播放一次；-1表示无限循环。）">0</EffectTimeMS>
+        <FuncID IsNull="true" />
+        <IsLoop Comment="是否循环">False</IsLoop>
+        <mSN>25</mSN>
+        <Name Comment="特效资源名">Assets/ArtWork/Lowpoly/PolygonParticles/Prefabs/FX_BloodSplat_Small_01.prefab</Name>
+        <Properties type="_Temp_.Battle.Data.Properties._Temp_EffectProperties" Comment="用户自定义扩展属性">
+          <FuncID IsNull="true" />
+        </Properties>
+        <ResTransform IsNull="true" />
+        <ScaleToBodySize Comment="如果不为0，则特效以该尺寸缩放">1</ScaleToBodySize>
+        <SoundName IsNull="true" />
+        <SubEffects IsNull="true" />
+        <Tag IsNull="true" />
+        <TextColor Comment="文字颜色">0</TextColor>
+        <TimeScale Comment="特效动画速度">1</TimeScale>
+        <WarningShape IsNull="true" />
+      </Effect>
+      <FuncID IsNull="true" />
+      <MaskDamage Comment="产生受击">False</MaskDamage>
+      <MaskKnockDown Comment="产生击倒">False</MaskKnockDown>
+      <MaskMustCritical Comment="此次攻击必暴击，即使暴击为0">False</MaskMustCritical>
+      <MaskMustHit Comment="此次攻击必命中，即使命中为0">False</MaskMustHit>
+      <mSN>24</mSN>
+      <Properties type="_Temp_.Battle.Data.Properties._Temp_AttackProperties" Comment="用户自定义扩展属性">
+        <FuncID IsNull="true" />
+      </Properties>
+      <Spell IsNull="true" />
+      <StopFrameAction IsNull="true" />
+      <StopFrameMS Comment="定帧时长">0</StopFrameMS>
+    </Attack>
+    <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
+      <FuncID IsNull="true" />
+    </CustomAction>
+    <Effect IsNull="true" />
+    <FrameMS Comment="关键帧时间(毫秒)">0</FrameMS>
+    <FuncID IsNull="true" />
+    <Spell IsNull="true" />
+    <Summon IsNull="true" />
+  </HitOnExplosionKeyFrame>
   <IconName IsNull="true" />
   <ID Comment="ID">10001</ID>
   <IsCycAnim Comment="是否循环播放动画">True</IsCycAnim>

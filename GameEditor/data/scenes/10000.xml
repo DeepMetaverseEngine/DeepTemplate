@@ -266,6 +266,48 @@
       <Y Comment="坐标Y">40.15196</Y>
       <Z Comment="坐标Z">0.07</Z>
     </element>
+    <element>
+      <Abilities element_type="DeepMetaGame.Data.ZoneEditor.RegionAbilityData" Comment="绑定的能力">
+        <element type="DeepMetaGame.Data.ZoneEditor.PlayerStartAbilityData" Comment="玩家出生点">
+          <FaceDirection Comment="单位朝向">0</FaceDirection>
+          <FlyOpt IsNull="true" />
+          <FuncID IsNull="true" />
+          <Name IsNull="true" />
+          <START_Force Comment="阵营">2</START_Force>
+          <TestActorLevel>0</TestActorLevel>
+          <TestActorTemplateID Comment="测试主角ID">10001</TestActorTemplateID>
+        </element>
+      </Abilities>
+      <Alias IsNull="true" />
+      <Attributes IsNull="true" />
+      <BindingEffect IsNull="true" />
+      <Color Comment="Color(ARGB)">-8355840</Color>
+      <Direction Comment="方向">0</Direction>
+      <DisplayName IsNull="true" />
+      <Enable Comment="逻辑开关">True</Enable>
+      <FuncID IsNull="true" />
+      <Height Comment="体素高度">1</Height>
+      <IsLocked Comment="编辑器是否锁定单位">False</IsLocked>
+      <Name Comment="">start</Name>
+      <NextNames element_type="System.String" Comment="临近的所有点" />
+      <R Comment="半径">0.3</R>
+      <RegionType Comment="区域类型">ROUND</RegionType>
+      <ResourceName IsNull="true" />
+      <ResourceOffset Comment="对应的模型文件(偏移)">
+        <Value>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Value>
+      </ResourceOffset>
+      <SavePath Comment=""></SavePath>
+      <Scale Comment="缩放">1</Scale>
+      <Script IsNull="true" />
+      <Tag IsNull="true" />
+      <X Comment="坐标X">17.523994</X>
+      <Y Comment="坐标Y">28.899376</Y>
+      <Z Comment="坐标Z">8.07</Z>
+    </element>
   </Regions>
   <RemoveUnitOnDisconnect Comment="单位掉线即离开场景">False</RemoveUnitOnDisconnect>
   <ResourceProperty IsNull="true" />
@@ -307,7 +349,7 @@
   &lt;LinkDir Comment="体素行走面链接方式"&gt;Sudoku&lt;/LinkDir&gt;
   &lt;MaxColor Comment="最大颜色数"&gt;256&lt;/MaxColor&gt;
   &lt;OverrideCellSize Comment="重写网格尺寸，大于0启效"&gt;0&lt;/OverrideCellSize&gt;
-  &lt;StepIntercept Comment="移动时可通过的高度差，阶梯高度"&gt;0.25&lt;/StepIntercept&gt;
+  &lt;StepIntercept Comment="移动时可通过的高度差，阶梯高度"&gt;0.5&lt;/StepIntercept&gt;
   &lt;VoxelMinDistance Comment="最小体素间距，两个体素如果小于该值，则合并，防止个头太高"&gt;1&lt;/VoxelMinDistance&gt;
   &lt;VoxelMinHeight Comment="体素最小厚度，防止太薄"&gt;0.25&lt;/VoxelMinHeight&gt;
 &lt;/data&gt;</ConfigXML>
@@ -332,7 +374,7 @@
     </VoxelBoundingBox>
     <VoxelGridCellH Comment="每格高">0.5</VoxelGridCellH>
     <VoxelGridCellW Comment="每格宽">0.5</VoxelGridCellW>
-    <VoxelStepIntercept Comment="阶梯高度">0.25</VoxelStepIntercept>
+    <VoxelStepIntercept Comment="阶梯高度">0.5</VoxelStepIntercept>
     <VoxelXCount Comment="宽（格子）">100</VoxelXCount>
     <VoxelYCount Comment="高（格子）">100</VoxelYCount>
   </Voxel>

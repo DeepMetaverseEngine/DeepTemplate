@@ -173,7 +173,7 @@
   <ResourcePropertiesMap>
     <PropertiesMap key_type="System.String" value_type="DeepMetaGame.Data.IResourceProperties" />
   </ResourcePropertiesMap>
-  <ResourceVersion>6e65b260207ce9402173f261ba4ec086</ResourceVersion>
+  <ResourceVersion>ca0505195e9fb5bee4c20ab27f156967</ResourceVersion>
   <Skills key_type="System.Int32" value_type="DeepMetaGame.Data.Template.SkillTemplate" Comment="技能模板">
     <element>
       <key>10001</key>
@@ -281,7 +281,91 @@
         <Abilities element_type="DeepMetaGame.Data.Template.ISkillTemplateAbility" Comment="能力" />
         <ActionPriority Comment="技能优先级，高优先级可打断低优先级">0</ActionPriority>
         <ActionQueue element_type="DeepMetaGame.Data.Template.UnitActionData" Comment="攻击动作序列">
-          <element />
+          <element>
+            <Action Comment="动作">
+              <ActionEffect IsNull="true" />
+              <ActionParams element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Param" Comment="动作参数" />
+              <ActionTriggers element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Trigger" Comment="动作触发器" />
+              <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
+                <FuncID IsNull="true" />
+              </CustomAction>
+              <Cycle Comment="是否循环">True</Cycle>
+              <DefaultState Comment="默认状态">
+                <CrossFadeTimeMS Comment="是否淡出">0</CrossFadeTimeMS>
+                <LayerName IsNull="true" />
+                <LayerWeight Comment="动作分层权重">-1</LayerWeight>
+                <StateName Comment="动作名">Idle</StateName>
+              </DefaultState>
+              <RepeatCount Comment="循环播几次">0</RepeatCount>
+              <SoundName IsNull="true" />
+              <Speed Comment="播放速度">1</Speed>
+              <SubStateKey IsNull="true" />
+              <SubStates element_type="DeepMetaGame.Data.Misc.UnitActionDefinitionMap+UnitActionKeyFrame+Layer" Comment="分层状态" />
+              <Tag Comment="Tag"></Tag>
+              <TimeMS Comment="播放时间（如果多段动作，则需要指定每段时间）">100</TimeMS>
+            </Action>
+            <ActionEffect IsNull="true" />
+            <BodyBlockOnAttackRange Comment="在攻击范围内，如果位移则挤开目标">True</BodyBlockOnAttackRange>
+            <BodyHit IsNull="true" />
+            <FuncID IsNull="true" />
+            <IsCancelable Comment="移动可取消动作">False</IsCancelable>
+            <IsCancelableBySkill Comment="技能可取消动作">False</IsCancelableBySkill>
+            <IsControlFaceable Comment="动作中可以控制转向">False</IsControlFaceable>
+            <IsControlMoveable Comment="动作中是否可以控制移动">False</IsControlMoveable>
+            <IsFaceToTarget Comment="动作中是否面向目标">False</IsFaceToTarget>
+            <IsInvisible Comment="动作是否隐身">False</IsInvisible>
+            <IsJumpLockTarget Comment="跳跃锁定目标，目标必须在攻击范围内">False</IsJumpLockTarget>
+            <IsJumpToTarget Comment="(冲锋)：移动到目标根据(距离/动作时间)来算速度，如果目标在原地，则原地跳跃。">False</IsJumpToTarget>
+            <IsMoveToTarget Comment="(冲锋)：移动到目标。">False</IsMoveToTarget>
+            <IsMoveToTargetStopAction Comment="冲锋或跳跃到目标时是否立即结束当前动作">False</IsMoveToTargetStopAction>
+            <IsNoneBlock Comment="是否进入霸体状态，不会被打断">False</IsNoneBlock>
+            <IsNoneTouch Comment="动作期间是否无碰撞">False</IsNoneTouch>
+            <KeyFrames element_type="DeepMetaGame.Data.Template.UnitActionData+KeyFrame" Comment="所有关键帧">
+              <element>
+                <Attack IsNull="true" />
+                <Blink IsNull="true" />
+                <ChangeStatus IsNull="true" />
+                <ChangeTarget IsNull="true" />
+                <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
+                  <FuncID IsNull="true" />
+                </CustomAction>
+                <Effect IsNull="true" />
+                <FrameMS Comment="关键帧时间(毫秒)">0</FrameMS>
+                <FuncID IsNull="true" />
+                <Move IsNull="true" />
+                <SelfAura IsNull="true" />
+                <SelfBuff IsNull="true" />
+                <Spell Comment="关键帧产生的法术或远程道具单位模板ID">
+                  <ChainLevel Comment="连锁等级，只在技能中LaunchSpell有效（闪电链类数量，如果Spell launch spell ID一致，则传递此值）如果为0，则不传递相同的Spell。">0</ChainLevel>
+                  <FinalChainSpell IsNull="true" />
+                  <FromSpellMagnitude Comment="Spell发射Straight Spell时，是否传递速度权重(Normal and Speed)">False</FromSpellMagnitude>
+                  <FromUnitBody Comment="填True，下面无效，发射口是否以单位炮口作为参考">True</FromUnitBody>
+                  <FuncID IsNull="true" />
+                  <InheritDamageTargetList Comment="弹射类子弹忽略弹射本体">False</InheritDamageTargetList>
+                  <IsAutoSeekingTarget Comment="自动锁定范围内目标">False</IsAutoSeekingTarget>
+                  <LaunchPercent Comment="触发百分比">100</LaunchPercent>
+                  <mSN>23</mSN>
+                  <PType Comment="触发新的法术运行方式">POS_TYPE_DEFAULT_SINGLE</PType>
+                  <RandomAngle Comment="随机角度">0</RandomAngle>
+                  <RepeatCount Comment="连续触发次数">0</RepeatCount>
+                  <RepeatIntervalMS Comment="连续触发间距">100</RepeatIntervalMS>
+                  <ResetSeekingTarget IsNull="true" />
+                  <SenderUnit Comment="发射者">Sender</SenderUnit>
+                  <SpellID Comment="触发新的法术">10001</SpellID>
+                  <SpellLevel Comment="法术等级">0</SpellLevel>
+                  <StartAngle Comment="发射初始弧度">0</StartAngle>
+                  <StartDirection Comment="法术起始方向">FaceToTarget</StartDirection>
+                  <SubSpells IsNull="true" />
+                </Spell>
+                <Summon IsNull="true" />
+              </element>
+            </KeyFrames>
+            <MoveToTargetSpeedSEC Comment="移动到目标速度">10</MoveToTargetSpeedSEC>
+            <OverrideAttackShape IsNull="true" />
+            <TargetOffset Comment="位移到目标位偏移量">0</TargetOffset>
+            <TargetPos Comment="位移到目标位置">Body</TargetPos>
+            <TriggerNextActionWaitTimeMS Comment="可触发下一段攻击的等待时间（毫秒）">0</TriggerNextActionWaitTimeMS>
+          </element>
         </ActionQueue>
         <ActionSpeedRate Comment="动作播放速率">1</ActionSpeedRate>
         <AttackBodyTouchRange Comment="技能和目标的保持距离">0</AttackBodyTouchRange>
@@ -291,7 +375,7 @@
         <AttackShape Comment="攻击范围">
           <AShape Comment="攻击范围类型">Fan</AShape>
           <AttackAngle Comment="弧度（Fan）">0.7853982</AttackAngle>
-          <AttackRange Comment="半径（Round, Fan, Circle）长度(Strip, StripRay，StripRayTouchEnd, RectStrip, RectStripRay, LineToTarget, WideStrip)">3</AttackRange>
+          <AttackRange Comment="半径（Round, Fan, Circle）长度(Strip, StripRay，StripRayTouchEnd, RectStrip, RectStripRay, LineToTarget, WideStrip)">15</AttackRange>
           <FuncID IsNull="true" />
           <OffsetRadius Comment="初始点半径偏移">0</OffsetRadius>
         </AttackShape>
@@ -301,7 +385,7 @@
         <ChantTimeMS Comment="吟唱时间（毫秒）大于0启效">0</ChantTimeMS>
         <ColorARGB Comment="Color(ARGB)">0</ColorARGB>
         <Comment IsNull="true" />
-        <CoolDownMS Comment="技能冷却时间(毫秒)">1000</CoolDownMS>
+        <CoolDownMS Comment="技能冷却时间(毫秒)">200</CoolDownMS>
         <CostHP Comment="释放消耗血量">0</CostHP>
         <CostMP Comment="释放消耗法力">0</CostMP>
         <CustomEvents element_type="DeepMetaGame.Data.ZoneEditor.UnitCustomEvent" Comment="所有事件" />
@@ -333,10 +417,10 @@
         <Abilities element_type="DeepMetaGame.Data.Template.ISpellTemplateAbility" Comment="能力" />
         <Attributes IsNull="true" />
         <BindingEffect IsNull="true" />
-        <BodyHeight Comment="法术自身高度">0.125</BodyHeight>
+        <BodyHeight Comment="法术自身高度">0.2</BodyHeight>
         <BodyHitVoxelAnchor Comment="法术判定范围对齐方式">NA</BodyHitVoxelAnchor>
         <BodyShape Comment="攻击范围类型">Round</BodyShape>
-        <BodySize Comment="尺寸，半径（Round, Fan, Circle）">0.5</BodySize>
+        <BodySize Comment="尺寸，半径（Round, Fan, Circle）">0.1</BodySize>
         <BodyVoxelAnchor Comment="法术高度对齐方式">Floating</BodyVoxelAnchor>
         <BonesBegin IsNull="true" />
         <BonesEnd IsNull="true" />
@@ -349,7 +433,7 @@
         <EditorPath Comment=""></EditorPath>
         <ExpectTarget Comment="法术期望作用目标">Enemy</ExpectTarget>
         <FileBodyScale Comment="缩放比率">1</FileBodyScale>
-        <FileName IsNull="true" />
+        <FileName Comment="模型名字或者Perfab名字">Assets/ArtWork/Lowpoly/PolygonMilitary/Prefabs/FX/FX_Bullet_Trail_Mesh.prefab</FileName>
         <FileNameDestory IsNull="true" />
         <FileNameSpawn IsNull="true" />
         <FilterAffect Comment="过滤范围内目标">Random</FilterAffect>
@@ -385,7 +469,65 @@
           <Summon IsNull="true" />
         </HitIntervalKeyFrame>
         <HitIntervalMS Comment="每间隔多少时间就触发一次，0 适用于穿透性，但只对单位造成一次伤害（毫秒）">0</HitIntervalMS>
-        <HitOnExplosion Comment="击中就消失(爆炸)，和HitIntervalMS冲突">False</HitOnExplosion>
+        <HitOnExplosion Comment="击中就消失(爆炸)，和HitIntervalMS冲突">True</HitOnExplosion>
+        <HitOnExplosionKeyFrame Comment="击中就消失(爆炸)关键帧，适用于打到就爆和Cannon类法术">
+          <Attack Comment="攻击伤害">
+            <Attack Comment="攻击力">1</Attack>
+            <Buff IsNull="true" />
+            <CrushEffect IsNull="true" />
+            <CrushPercent Comment="百分比概率击碎目标">0</CrushPercent>
+            <Effect Comment="被击中特效">
+              <AnimName IsNull="true" />
+              <AutoFitBindBodySize Comment="是否根据绑定物bodysize缩放">False</AutoFitBindBodySize>
+              <BindBody Comment="触发特效是否绑定在单位(坐标)">False</BindBody>
+              <BindBodyDirection Comment="触发特效是否绑定在单位(方向)">True</BindBodyDirection>
+              <BindingOffsetAngle360 Comment="如果为绑定，绑定角度偏移量">0</BindingOffsetAngle360>
+              <BindingOffsetDistance Comment="如果为绑定，绑定长度偏移量">0</BindingOffsetDistance>
+              <BindingOffsetZ Comment="如果为绑定，绑定Z高度偏移量">0</BindingOffsetZ>
+              <BindPartName IsNull="true" />
+              <Blur IsNull="true" />
+              <BodyVoxelAnchor Comment="高度对齐方式">Floating</BodyVoxelAnchor>
+              <Camera IsNull="true" />
+              <DeadTimeMS Comment="特效消亡后的持续时间">0</DeadTimeMS>
+              <EffectTimeMS Comment="特效持续时间。（0表示只播放一次；-1表示无限循环。）">0</EffectTimeMS>
+              <FuncID IsNull="true" />
+              <IsLoop Comment="是否循环">False</IsLoop>
+              <mSN>25</mSN>
+              <Name Comment="特效资源名">Assets/ArtWork/Lowpoly/PolygonParticles/Prefabs/FX_BloodSplat_Small_01.prefab</Name>
+              <Properties type="_Temp_.Battle.Data.Properties._Temp_EffectProperties" Comment="用户自定义扩展属性">
+                <FuncID IsNull="true" />
+              </Properties>
+              <ResTransform IsNull="true" />
+              <ScaleToBodySize Comment="如果不为0，则特效以该尺寸缩放">1</ScaleToBodySize>
+              <SoundName IsNull="true" />
+              <SubEffects IsNull="true" />
+              <Tag IsNull="true" />
+              <TextColor Comment="文字颜色">0</TextColor>
+              <TimeScale Comment="特效动画速度">1</TimeScale>
+              <WarningShape IsNull="true" />
+            </Effect>
+            <FuncID IsNull="true" />
+            <MaskDamage Comment="产生受击">False</MaskDamage>
+            <MaskKnockDown Comment="产生击倒">False</MaskKnockDown>
+            <MaskMustCritical Comment="此次攻击必暴击，即使暴击为0">False</MaskMustCritical>
+            <MaskMustHit Comment="此次攻击必命中，即使命中为0">False</MaskMustHit>
+            <mSN>24</mSN>
+            <Properties type="_Temp_.Battle.Data.Properties._Temp_AttackProperties" Comment="用户自定义扩展属性">
+              <FuncID IsNull="true" />
+            </Properties>
+            <Spell IsNull="true" />
+            <StopFrameAction IsNull="true" />
+            <StopFrameMS Comment="定帧时长">0</StopFrameMS>
+          </Attack>
+          <CustomAction type="_Temp_.Battle.Data.Properties._Temp_CustomKeyFrame" Comment="自定义动作">
+            <FuncID IsNull="true" />
+          </CustomAction>
+          <Effect IsNull="true" />
+          <FrameMS Comment="关键帧时间(毫秒)">0</FrameMS>
+          <FuncID IsNull="true" />
+          <Spell IsNull="true" />
+          <Summon IsNull="true" />
+        </HitOnExplosionKeyFrame>
         <IconName IsNull="true" />
         <ID Comment="ID">10001</ID>
         <IsCycAnim Comment="是否循环播放动画">True</IsCycAnim>
@@ -575,14 +717,14 @@
               <FuncID IsNull="true" />
               <mSN>4</mSN>
               <Priority Comment="释放技能权值">0</Priority>
-              <SkillID Comment="SkillID">0</SkillID>
+              <SkillID Comment="SkillID">10003</SkillID>
               <SkillLevel Comment="技能等级">0</SkillLevel>
             </BaseSkillID>
             <DeadLaunchSpell IsNull="true" />
             <FuncID IsNull="true" />
             <LaunchSpellAngle Comment="法术发射弧度（炮口弧度）">0</LaunchSpellAngle>
-            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">0</LaunchSpellHeight>
-            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0</LaunchSpellRadius>
+            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">1.3</LaunchSpellHeight>
+            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0.5</LaunchSpellRadius>
             <Skills element_type="DeepMetaGame.Data.Misc.LaunchSkill" Comment="此单位绑定的所有技能ID" />
           </element>
           <element type="DeepMetaGame.Data.Template.UnitInventoryAbility" Comment="7.背包能力">
@@ -681,14 +823,14 @@
               <FuncID IsNull="true" />
               <mSN>5</mSN>
               <Priority Comment="释放技能权值">0</Priority>
-              <SkillID Comment="SkillID">0</SkillID>
+              <SkillID Comment="SkillID">10003</SkillID>
               <SkillLevel Comment="技能等级">0</SkillLevel>
             </BaseSkillID>
             <DeadLaunchSpell IsNull="true" />
             <FuncID IsNull="true" />
             <LaunchSpellAngle Comment="法术发射弧度（炮口弧度）">0</LaunchSpellAngle>
-            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">0</LaunchSpellHeight>
-            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0</LaunchSpellRadius>
+            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">1.3</LaunchSpellHeight>
+            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0.5</LaunchSpellRadius>
             <Skills element_type="DeepMetaGame.Data.Misc.LaunchSkill" Comment="此单位绑定的所有技能ID" />
           </element>
           <element type="DeepMetaGame.Data.Template.UnitInventoryAbility" Comment="7.背包能力">
@@ -787,14 +929,14 @@
               <FuncID IsNull="true" />
               <mSN>6</mSN>
               <Priority Comment="释放技能权值">0</Priority>
-              <SkillID Comment="SkillID">0</SkillID>
+              <SkillID Comment="SkillID">10003</SkillID>
               <SkillLevel Comment="技能等级">0</SkillLevel>
             </BaseSkillID>
             <DeadLaunchSpell IsNull="true" />
             <FuncID IsNull="true" />
             <LaunchSpellAngle Comment="法术发射弧度（炮口弧度）">0</LaunchSpellAngle>
-            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">0</LaunchSpellHeight>
-            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0</LaunchSpellRadius>
+            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">1.3</LaunchSpellHeight>
+            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0.5</LaunchSpellRadius>
             <Skills element_type="DeepMetaGame.Data.Misc.LaunchSkill" Comment="此单位绑定的所有技能ID" />
           </element>
           <element type="DeepMetaGame.Data.Template.UnitInventoryAbility" Comment="7.背包能力">
@@ -859,7 +1001,7 @@
           </element>
           <element type="DeepMetaGame.Data.Template.UnitGuardAbility" Comment="2.警戒能力">
             <FuncID IsNull="true" />
-            <GuardRange Comment="警戒距离范围">10</GuardRange>
+            <GuardRange Comment="警戒距离范围">12</GuardRange>
             <GuardRangeAngle Comment="警戒范围角度(0-360)，0为圆形">0</GuardRangeAngle>
             <GuardRangeGroup Comment="传递警戒范围，如果此单位进入战斗，则传给相邻单位Add，0表示不传递">5</GuardRangeGroup>
             <GuardRangeLimitAppend Comment="原有警戒范围，的超出警戒范围（GuardRange + GuardRangeLimitAppend）">5</GuardRangeLimitAppend>
@@ -893,14 +1035,14 @@
               <FuncID IsNull="true" />
               <mSN>7</mSN>
               <Priority Comment="释放技能权值">0</Priority>
-              <SkillID Comment="SkillID">0</SkillID>
+              <SkillID Comment="SkillID">10003</SkillID>
               <SkillLevel Comment="技能等级">0</SkillLevel>
             </BaseSkillID>
             <DeadLaunchSpell IsNull="true" />
             <FuncID IsNull="true" />
             <LaunchSpellAngle Comment="法术发射弧度（炮口弧度）">0</LaunchSpellAngle>
-            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">0</LaunchSpellHeight>
-            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0</LaunchSpellRadius>
+            <LaunchSpellHeight Comment="法术发射高度（炮口高度）">1.3</LaunchSpellHeight>
+            <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0.5</LaunchSpellRadius>
             <Skills element_type="DeepMetaGame.Data.Misc.LaunchSkill" Comment="此单位绑定的所有技能ID" />
           </element>
           <element type="DeepMetaGame.Data.Template.UnitInventoryAbility" Comment="7.背包能力">

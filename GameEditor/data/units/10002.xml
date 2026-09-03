@@ -52,14 +52,14 @@
         <FuncID IsNull="true" />
         <mSN>5</mSN>
         <Priority Comment="释放技能权值">0</Priority>
-        <SkillID Comment="SkillID">0</SkillID>
+        <SkillID Comment="SkillID">10003</SkillID>
         <SkillLevel Comment="技能等级">0</SkillLevel>
       </BaseSkillID>
       <DeadLaunchSpell IsNull="true" />
       <FuncID IsNull="true" />
       <LaunchSpellAngle Comment="法术发射弧度（炮口弧度）">0</LaunchSpellAngle>
-      <LaunchSpellHeight Comment="法术发射高度（炮口高度）">0</LaunchSpellHeight>
-      <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0</LaunchSpellRadius>
+      <LaunchSpellHeight Comment="法术发射高度（炮口高度）">1.3</LaunchSpellHeight>
+      <LaunchSpellRadius Comment="法术发射半径（炮口半径）">0.5</LaunchSpellRadius>
       <Skills element_type="DeepMetaGame.Data.Misc.LaunchSkill" Comment="此单位绑定的所有技能ID" />
     </element>
     <element type="DeepMetaGame.Data.Template.UnitInventoryAbility" Comment="7.背包能力">
